@@ -15,10 +15,6 @@ const iconStyles = {
     cursor: 'pointer'   
 }
 
-const textStyles = {
-    color: '#eee'
-}
-
 const linkStyles = {
     textDecoration: 'none !important'
 }
