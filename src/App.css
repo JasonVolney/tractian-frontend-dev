@@ -69,7 +69,7 @@ section::after {
     clear: both;
 }
 
-.btnAlert{
+.btnAlert::hover{
     background: rgba(225, 176, 103, 0.66);
 }
 
