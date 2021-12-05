@@ -1,0 +1,80 @@
+html, 
+body {
+    margin: 0 auto;    
+    padding: 0px;
+    border: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden; 
+}
+
+.home { 
+    color: rgba(0, 0, 0, 0.51);   
+}
+
+.sidebar ul li{
+    list-style-type: none !important;    
+}
+
+.sensorView{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.container{
+    float: right;
+}
+
+.View{
+    color: black;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 35px;
+    width: 540px;
+    margin-left: 200px; 
+    box-shadow: 4px 4px .5em rgb(185, 185, 185);
+}
+
+.Images{
+    width: 60%;
+    height: 60%;
+    /* margin-left: 800px;  */
+    /* float: right; */
+    margin-top: -800px;
+    box-shadow: 4px 4px .5em rgb(77, 77, 77);
+}
+
+.containerImages{
+    width: calc(100% - 500px);
+}
+
+.DataSheet{
+    width: 540px;
+    margin-top: 20px;
+    margin-left: 200px; 
+    box-shadow: 4px 4px .5em rgb(185, 185, 185);
+}
+
+.DataSheet ul li {
+    list-style-type: none !important;  
+    display: flex;
+    justify-content: space-between;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btnAlert{
+    background: rgba(225, 176, 103, 0.66);
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 180px;
+}
