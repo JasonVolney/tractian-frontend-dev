@@ -74,7 +74,7 @@ const Sensor = () => {
             }, []);
 
             useEffect(() => {
-                fetch(`${JSON_API}/units?_page=1&_limit=1`)
+                fetch(`${JSON_API}/units?_page=1&_limit=2`)
                     .then(res => {
                         return res.json();
                     })
