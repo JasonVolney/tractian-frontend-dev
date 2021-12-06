@@ -9,7 +9,7 @@ const Home = () => {
     // const [units, setUnits] = useState(null);
 
     useEffect(() => {
-        fetch(`${JSON_API}/assets`)
+        fetch(`${JSON_API}/assets?_page=1&_limit=20`)
             .then(res => {
                 return res.json();
             })

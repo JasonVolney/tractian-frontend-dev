@@ -24,6 +24,7 @@ body {
 
 .container{
     float: right;
+    display: inline;  
 }
 
 .View{
@@ -41,13 +42,9 @@ body {
     width: 60%;
     height: 60%;
     /* margin-left: 800px;  */
-    /* float: right; */
-    margin-top: -800px;
+    float: right;
+    margin-top: 0px;
     box-shadow: 4px 4px .5em rgb(77, 77, 77);
-}
-
-.containerImages{
-    width: calc(100% - 500px);
 }
 
 .DataSheet{
@@ -77,4 +74,16 @@ section::after {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 180px;
+}
+
+.column {
+    float: left;
+    width: 40%;
+    padding: 40px;   
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

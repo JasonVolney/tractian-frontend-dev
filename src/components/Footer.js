@@ -74,7 +74,7 @@ const Footer = () => {
     }, []);
     return (
         <div style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/industrial-1920x296.png'})`, 
-        backgroundRepeat: 'no-repeat', filter: 'grayscale(100%)', height: '25%', marginLeft: '80px', marginTop: '20px' }}>
+        backgroundRepeat: 'no-repeat', filter: 'grayscale(100%)', height: '25%', marginLeft: '80px', marginTop: '0vh' }}>
             {/* <footer> */}
                
             <div style={footerStyles}>
