@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { JSON_API } from '../helpers/Constants';
+import styles from "../App.css";
+import { Icon } from '@iconify/react';
 
 const btnSensor = {
     marginTop: '100px',
@@ -7,7 +9,7 @@ const btnSensor = {
     padding: '30px',
     width: '350px',
     height: '116px',
-    background: 'rgba(225, 176, 103, 0.66)',
+    backgroundColor: '#E1B067',
     verticalAlign: 'center',
     borderRadius: '8px',
     float: 'left',    
@@ -21,7 +23,7 @@ const btnStatus = {
     padding: '30px',
     width: '350px',
     height: '116px',
-    backgroundColor: 'rgba(225, 176, 103, 0.66)',
+    backgroundColor: '#E1B067',
     verticalAlign: 'center',
     borderRadius: '8px',
     float: 'left',
@@ -34,7 +36,7 @@ const btnEquipment = {
     padding: '30px',
     width: '350px',
     height: '116px',
-    background: 'rgba(225, 176, 103, 0.66)',
+    backgroundColor: '#E1B067',
     verticalAlign: 'center',
     borderRadius: '8px',
     float: 'left',
@@ -43,7 +45,9 @@ const btnEquipment = {
 
 const footerStyles = {
     height: '280px',
+    width: '100%',
     marginLeft: '200px', 
+    MarginBottom: '0px',  
     Bottom: '0px',  
     display: 'flex',
     fontSize: '24px',
@@ -56,6 +60,16 @@ const txtSpan = {
 
 const txtTag = {
     fontSize: '35px'
+}
+
+const iconStyles = {
+    height: '55px',
+    width: 'auto',
+    color: '#eee',
+    textAlign: 'center',
+    padding: '4px',
+    marginLeft: '0px',
+    cursor: 'pointer'   
 }
 
 const Footer = () => {
@@ -73,8 +87,8 @@ const Footer = () => {
             });
     }, []);
     return (
-        <div style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/industrial-1920x296.png'})`, 
-        backgroundRepeat: 'no-repeat', filter: 'grayscale(100%)', height: '25%', marginLeft: '80px', marginTop: '0vh' }}>
+        <div style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/images/industrial-1920x296.png'})`, 
+        backgroundRepeat: 'no-repeat', filter: 'grayscale(100%)', height: '25%', marginLeft: '80px', marginTop: '0vh', marginBottom: '0vh' }}>
             {/* <footer> */}
                
             <div style={footerStyles}>
@@ -83,14 +97,17 @@ const Footer = () => {
                     <div className="btnSensor" style={btnSensor}>
                         <span style={txtSpan}>Sensor</span>
                         <p style={txtTag}>{assets.sensors}</p>
+                        <Icon icon="emojione:antenna-bars" style={iconStyles} />
                     </div>   
-                    <div className="btnStatus" style={btnStatus}>
+                    <div className="btnStatus" style={styles.btnStatus}>
                         <span style={txtSpan}>Status</span>
                         <p style={txtTag}>{assets.status}</p>
+                        <Icon icon="emojione-v1:warning" style={iconStyles} />
                     </div>
                     <div className="btnEquipment" style={btnEquipment}>
                         <span style={txtSpan}>Equipment</span>
-                        <p>{assets.name}</p>
+                        <p style={txtTag}>{assets.name}</p>
+                        <Icon icon="tabler:windmill" style={iconStyles} />
                     </div>
                 </div>
             ))}

@@ -3,13 +3,34 @@ body {
     margin: 0 auto;    
     padding: 0px;
     border: 0px;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    max-width: 100vw;
     overflow-x: hidden; 
 }
 
 .home { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
     color: rgba(0, 0, 0, 0.51);   
+}
+
+.navbar{
+    width: 100%;
+    height: 3em;
+    margin: 0 auto;
+    background: rgb(45, 55, 148); 
+    color: white;
+    position: fixed;
+}
+
+.navbar ul li{
+    width: 100%;  
+    display: inline;
+    align-items: flex-start;    
+    justify-content: space-around;
 }
 
 .sidebar ul li{
@@ -24,7 +45,7 @@ body {
 
 .container{
     float: right;
-    display: inline;  
+    display: flex;  
 }
 
 .View{
@@ -44,14 +65,25 @@ body {
     /* margin-left: 800px;  */
     float: right;
     margin-top: 0px;
-    box-shadow: 4px 4px .5em rgb(77, 77, 77);
+    box-shadow: 4px 4px .5em rgb(185, 185, 185);
+    /* filter: grayscale(100%); */
+    -webkit-perspective: 500;
+    perspective: 500;
 }
 
 .DataSheet{
     width: 540px;
-    margin-top: 20px;
+    margin-top: 100px;
+    padding-right: 50px;
     margin-left: 200px; 
     box-shadow: 4px 4px .5em rgb(185, 185, 185);
+}
+
+.ImageCards{
+    width: 840px;
+    /* margin-top: 20px;
+    margin-left: 200px;  */
+    /* box-shadow: 4px 4px .5em rgb(185, 185, 185); */
 }
 
 .DataSheet ul li {
@@ -70,16 +102,28 @@ section::after {
     background: rgba(225, 176, 103, 0.66);
 }
 
+.btnStatus{
+    margin-top: 100px;
+    margin-left: 0px;
+    padding: 30px;
+    width: 350px;
+    height: 116px;
+    background-color: #E1B067;
+    vertical-align: center;
+    border-radius: 8px;
+    float: left;
+    cursor: pointer;
+}
+
+.btnStatus:hover{
+    background-color: #FFF;
+    opacity: 0.6;
+}
+
 .footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 180px;
-}
-
-.column {
-    float: left;
-    width: 40%;
-    padding: 40px;   
 }
 
 .row:after {
@@ -87,3 +131,70 @@ section::after {
     display: table;
     clear: both;
 }
+
+.btnShowImg{   
+    margin: 2px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 45px;
+    font-size: 18px;
+    color: white;
+    background: rgb(57, 59, 56);
+    border: none;
+    border-radius: 8px;    
+    box-shadow: 4px 4px .5em rgb(185, 185, 185);
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Flip cards */
+
+.section-box {
+    width: 800px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    perspective: 1000;
+}
+
+.card {    
+    width: calc(50% - 5px);
+    height: calc(30% - 5px);
+    margin: 5px 200px;
+    margin-top: 10px;
+    position: center;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+    box-shadow: 4px 4px .5em rgb(185, 185, 185);
+    border: none;
+    border-radius: 8px;    
+  }
+  
+  .card:active {
+    transform: scale(0.97);
+    transition: transform .9s;
+  }
+    
+  .card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {     
+    width: 100%;
+    height: 100%;  
+    position: relative;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    position: relative;
+    backface-visibility: hidden;    
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  

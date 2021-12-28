@@ -1,5 +1,6 @@
 import React from 'react'
 import SideBar from './SideBar'
+import NavBar from './NavBar'
 
 const headerStyles = {    
     width: '100%',
@@ -17,7 +18,8 @@ const homeStyles = {
 function Header() {
     return (
         <div style={headerStyles}>
-            <header className="header" >              
+            <header className="header" >  
+                <NavBar/>            
             <h2 style={homeStyles}>Datasheet</h2>
                 <SideBar/>
             </header>

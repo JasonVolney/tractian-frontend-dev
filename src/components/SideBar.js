@@ -22,8 +22,7 @@ const linkStyles = {
 const sideBar = {   
     background: '#2D3794',
     width: '5rem',
-    height: '100vh',  
-    borderRadius: '8px 0px 0px 8px',
+    height: '100vh', 
     letterSpacing: '50px',
     boxShadow: '#626796',
     TextAlign: 'center',
@@ -60,7 +59,7 @@ export class SideBar extends Component {
                     <ul>
                         <li>
                             <Link to="/sensors" style={linkStyles} style={{ textDecoration: 'none' }}>
-                                <Icon icon="eos-icons:rotating-gear" style={iconStyles} /><br />
+                                <Icon icon="bi:gear-fill" style={iconStyles} /><br />
                                 {/* <span style={textStyles}>Sensors</span> */}
                             </Link>
                         </li>
