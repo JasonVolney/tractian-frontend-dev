@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Sensor from './Sensor';
-import Header from './Header';
+
 // import SideBar from './SideBar';
+import Sensor from './Sensor';
 import { JSON_API } from '../helpers/Constants'
 
 const Home = () => {
@@ -21,9 +21,9 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="home" >         
-            <Header/>
-            {assets && <Sensor assets={assets}/>}
+        <div className="home" >            
+            <Sensor/>       
+            {/* {assets && <Sensor assets={assets}/>} */}
         </div>
     );
 }

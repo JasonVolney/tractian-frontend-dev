@@ -4,12 +4,27 @@ import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
 export const Container = styled.div`
-    max-width: 1360px;
+    /* max-width: 1360px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box; */
+
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
     box-sizing: border-box;
+
+    /* background: #36393e; */
+    background: #FFFF;
+    display: flex;
+    justify-content: center; // 1
+    flex-flow: column wrap; // 2
+    width: 100%;
+    height: 100%;
+
     &:before,
     &:after {
         content: "";
@@ -19,6 +34,31 @@ export const Container = styled.div`
         clear: both;
     }
 `
+
+const List = styled.div`
+  display: flex;
+  justify-content: center; // 3
+  flex-flow: row wrap; // 4
+  list-style-type: none !important; 
+  list-style: none!important; 
+`;
+
+
+const Card = styled.div`
+  margin: 20px;
+  background: #fff;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-flow: column; // 5 
+  justify-content: center;
+  align-items: center;  
+  ul: {
+      list-style-type: none!important;
+  }
+`;
 
 export const Row = styled.div`
     width: 100%;
@@ -38,16 +78,17 @@ export const Row = styled.div`
 function getWidthGrid(value){
     if(!value) return;
 
-    let width = value / 12 * 100;
+    let width = value / 12 * 100;    
     return `width: ${width}%;`;
 }
 
 export const Column = styled.div`
     float: left;
-    padding: .25rem;
+    padding: .15rem;
     min-height: 1px;
     box-sizing: border-box;
     width: 100%;
+    height: 40%;
     
     @media only screen and (min-width: 768px){        
         ${({mobile}) => mobile && getWidthGrid(mobile)};
@@ -58,7 +99,7 @@ export const Column = styled.div`
     }
 
     @media only screen and (min-width: 768px){
-        ${({desktop}) => desktop && getWidthGrid(desktop)};
+        ${({desktop}) => desktop && getWidthGrid(desktop)};  
     }
 `
 // width: ${props =>(props.grid ? props.grid / 12 * 100 : '8:33')}%;
@@ -99,8 +140,8 @@ const titleStyles = {
     fontSize: '24px',
     color: '#000',
     paddingTop: '80px',
-    marginLeft: '65px',
-    textAlign: 'center',
+    marginLeft: '0px',
+    textAlign: 'left',
     verticalAlign: 'center',
     justifyContent: 'center',
     display: 'flex'
@@ -236,22 +277,26 @@ const Sensor = () => {
 
         return (
             <Container>
-                <Row>
-                    <Column mobile="3" tablet="6" desktop="11">
-                        {companies && companies.map((companies) => (          
-                            <p style={titleStyles}>Company: {companies.name}</p>
-                        ))}             
+                 <List>
+                     <Column>
+                        <div mobile="3" tablet="6" desktop="12">
+                            {companies && companies.map((companies) => (          
+                                <p style={titleStyles}>Company: {companies.name}</p>
+                            ))}             
+                        </div>
+                     </Column>
+                    <div mobile="3" tablet="6" desktop="12">
                         {units && units.map((units) => (
                         <div className="View" key={units.id} style={viewStyles}>
                                 <p>{units.name}</p>
                         </div>
                         ))}
-                    </Column>
-                    <Column mobile="3" tablet="6" desktop="1">
-                        <p style={textStyles}>Specifications: </p>
-                        {assets && assets.map((assets) => (
-                            <div className="DataSheet" key={assets.id} style={datasheetStyles}>
-                            <img src={assets.image} className="back-face" alt="images" style={imgStyles}/>
+                    </div>                 
+                    {assets && assets.map((assets) => (
+                    <div mobile="3" tablet="6" desktop="12">
+                            <div className="DataSheet" key={assets.id} style={datasheetStyles}>                            
+                            <img src={assets.image} className="Images" alt="images"/>
+                            <p>{assets.name}</p><br/>                          
                                 <button className='btnShowImg' type='button'><Icon icon="icons8:home" style={iconStyles} /></button>
                                 <button className='btnShowImg' type='button'><Icon icon="ic:outline-content-paste-search" style={iconStyles} /></button>                                
                                 <button className='btnShowImg' type='button'><Icon icon="akar-icons:arrow-back-thick" style={iconStyles} /></button>
@@ -264,20 +309,12 @@ const Sensor = () => {
                                 <li><p>Total Uptime: </p>{assets.metrics.totalUptime} hours</li><br/>
                                 <li><p>Last Uptime At: </p>{assets.metrics.lastUptimeAt} datetime</li><br/>
                             </ul>                    
-                        </div>
-                        ))}    
-                    </Column>
-                    {/* <Column mobile="3" tablet="6" desktop="1">
-                    <section class="section-box">
-                        {assets && assets.map((assets) => (
-                            <div className="card" key={assets.id}>  
-                                <img src={assets.image} alt="images" style={imgStyles}/>
-                                <img src='/images/tractian-logo.png' className="back-face" alt="images"/>
-                            </div>                                          
-                        ))} 
-                    </section>
-                    </Column>                  */}
-                </Row>
+                        </div>                            
+                    </div>))}                     
+                </List>
+                
+                 
+            
             </Container>
         )    
 }

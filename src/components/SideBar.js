@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Icon } from '@iconify/react';
 import Dashboard from '../pages/Dashboard';
-import Equipment from './Equipment';
 import Account from '../pages/Account';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -30,7 +29,14 @@ const sideBar = {
     alignItems: 'center',
     justifyContent: 'space-between',
     position: 'fixed',
-    paddingTop: '50px'
+    paddingTop: '150px',
+    top: '0px',
+    
+    sidebar: {
+    '&:hover': {
+        width: '50rem',
+        }
+    }
 }
 
 export class SideBar extends Component {
@@ -74,8 +80,7 @@ export class SideBar extends Component {
                         </li>
                     </ul>
                 </nav>
-                <Routes>
-                    <Route path="/equipment" exact element={<Equipment />}></Route>
+                <Routes>             
                     <Route path="/account" exact element={<Account />}></Route>
                     <Route path="/dashboard" exact element={<Dashboard />}></Route>
                     {/* <Route path="/" exact element={<Home/>}></Route> */}

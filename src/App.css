@@ -10,13 +10,6 @@ body {
     overflow-x: hidden; 
 }
 
-.home { 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-    color: rgba(0, 0, 0, 0.51);   
-}
-
 .navbar{
     width: 100%;
     height: 3em;
@@ -55,32 +48,32 @@ body {
     margin-bottom: 20px;
     padding-top: 35px;
     width: 540px;
-    margin-left: 200px; 
     box-shadow: 4px 4px .5em rgb(185, 185, 185);
 }
 
 .Images{
-    width: 60%;
-    height: 60%;
-    /* margin-left: 800px;  */
+    width: 100%;
+    height: auto;
     float: right;
     margin-top: 0px;
     box-shadow: 4px 4px .5em rgb(185, 185, 185);
-    /* filter: grayscale(100%); */
+    filter: grayscale(100%);
+    border-radius: 8px;
     -webkit-perspective: 500;
     perspective: 500;
 }
 
 .DataSheet{
     width: 540px;
-    margin-top: 100px;
+    margin-top: 20px;
     padding-right: 50px;
-    margin-left: 200px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
     box-shadow: 4px 4px .5em rgb(185, 185, 185);
 }
 
 .ImageCards{
-    width: 840px;
+    width: 540px;
     /* margin-top: 20px;
     margin-left: 200px;  */
     /* box-shadow: 4px 4px .5em rgb(185, 185, 185); */
@@ -120,7 +113,7 @@ section::after {
     opacity: 0.6;
 }
 
-.footer{
+.footer{    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 180px;
@@ -151,18 +144,18 @@ section::after {
 
 .section-box {
     width: 800px;
-    height: 100%;
+    height: 50%;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    perspective: 1000;
+    perspective: 600;       
 }
 
 .card {    
     width: calc(50% - 5px);
-    height: calc(30% - 5px);
+    /* height: calc(30% - 5px); */
     margin: 5px 200px;
     margin-top: 10px;
     position: center;
@@ -172,6 +165,9 @@ section::after {
     box-shadow: 4px 4px .5em rgb(185, 185, 185);
     border: none;
     border-radius: 8px;    
+
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
   }
   
   .card:active {
@@ -188,8 +184,8 @@ section::after {
     width: 100%;
     height: 100%;  
     position: relative;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     position: relative;
     backface-visibility: hidden;    
   }
