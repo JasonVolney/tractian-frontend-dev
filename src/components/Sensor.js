@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { JSON_API } from '../helpers/Constants'
+import { Button } from 'antd';
 
 const imgStyles = {
-    with: '200px',
+    width: '25%',
     height: 'auto',
-    marginLeft: '200px',
-    borderRadius: '10px',
+    borderRadius: '4px',
     background: '#C4C4C4', 
     filter: 'grayscale(100%)',
     display: 'flexbox'

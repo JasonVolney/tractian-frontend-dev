@@ -11,5 +11,5 @@ server.use(jsonServer.rewriter({
 }))
 server.use(router);
 server.listen(PORT, () => {
-    console.log('Servidor rodando...');
+    console.log(`Servidor rodando... Porta ${PORT}`);
 });
